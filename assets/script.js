@@ -27,7 +27,7 @@ var element = document.querySelector("#quiz");
 var progress2 = document.querySelector("#progress");
 var currentime = 59;
 var counter = 0;
-var UserName = document.querySelector("#username");
+var UserInitials = document.querySelector("#userinitials");
 var submit = document.querySelector("#sign-up");
 
 var totalSeconds = 0;
@@ -51,7 +51,7 @@ function startTimer(duration, display) {
         else if (timer === 0) {
             element.innerHTML = "<h1> Game over</h1>" + "<h1 id='score'>Your Final Score is : " + counter + " </h1>" +
 
-                "<input type= text name= EnterYourName id=username  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button </form> "
+                "<input type= text name= EnterYourInitials id=username  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button </form> "
             clicbutton.innerHTML =
                 progress2.innerHTML = "";
             startTimer(currentime, display);
@@ -166,7 +166,7 @@ function progress() {
     if (current >= quizz.questions.length) {
         element.innerHTML = "<h1> Game over</h1>" + "<h1 id='score'>Your Final Score is : " + counter + " </h1>" +
 
-            "<input type= text name= EnterYourName id=username  placeholder=Enter_Your_Name_here />  <button class= bt id=sign-up >Sumbit</button>  "
+            "<input type= text name= EnterYourInitials id=username  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button>  "
         clicbutton.innerHTML =
         progress2.innerHTML = "";
 
