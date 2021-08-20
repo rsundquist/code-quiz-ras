@@ -1,22 +1,22 @@
 var questions = [
-    new question("Which movie kicked off the Marvel Cinematic Universe as we know it today",
-        ["A - Captain America", "B - Iron Man", "C - The Incredible Hulk", "D - Captain Marvel."], "B - Iron Man"),
-    new question("Who is the actor that portrays Loki ?", ["A - Tom Hiddleston", "B - Robert Downey Jr",
-        "C - Chris Hemsworth", "D - None of the above."], "A - Tom Hiddleston"),
-    new question("What is Deadpools real name?",
-        ["A - Wayne Wilson ", "B - Bruce Wayne", "C - Wade Wilson", "D - None of the above."], "C - Wade Wilson"),
-    new question(" What is the real name of the Scarlet Witch?",
-        ["A - Natasha Romanoff", "B - Lois Lane", "C - Diana Prince", "D - Wanda Maximoff"], "D - Wanda Maximoff"),
-    new question("Who killed Tony Stark's parents?",
-        ["A - Mark 42", "B - Ultron", "C - Jarvis", "D - The Winter Soldier"], "D - The Winter Soldier"),
-    new question("What species is Loki revealed to be?",
-        ["A - Kryptonian", "B - Asgardian", "C - Human", "D - Frost Giant"], "D - Frost Giant"),
-    new question("Which of the infinity stones is hidden on Vormir?", ["A - Time Stone", "B - Reality Stone",
-        "C - Soul Stone", "D - Mind Stone"], "C - Soul Stone"),
-    new question("What type of doctor is Stephen Strange?", ["A - Neurosurgeon", "B - Trauma Surgeon", "C - Plastic Surgeon", "D - Cardiothoracic Surgeon"], "A - Neurosurgeon"),
-    new question("Who is Black Panther's Sister?", ["A - Nakia", "B - Ramonda",
-        "C - Shuri", "D - Okoye"], "C - Shuri"),
-    new question("What is the name of Thor's hammer?", ["A -Mjolnir", "B -Vanir", "C - Stormbreaker", "D - hammer"],
+    new question("The 'function' and the 'var' are known as:",
+        ["A - Keywords", "B - Data Types", "C - Declaration Statements", "D - None of the above."], "C - Declaration Statements"),
+    new question("Which of the following variables takes precedence over the others if the names are the same?", ["A - Global Variable", "B - The local element",
+        "C - The two above", "D - None of the above."], "B - The local element"),
+    new question("Which of the following number object function returns the value of the number?",
+        ["A - toSource()", "B - valueOf()", "C - toString()", "D - toPrecision"], "B - valueOf()"),
+    new question(" Which of the following function of Array object creates a new array with the results of calling a provided function on every element in this array?",
+        ["A - push()", "B - join()", "C - pop()", "D - map()"], "D - map()"),
+    new question("Which of the following function of String object is used to match a regular expression against a string?",
+        ["A - concat()", "B - match()", "C - search()", "D - replace()"], "D - replace()"),
+    new question("Which of the following function of Array object sorts the elements of an array?",
+        ["A - toSource()", "B - sort()", "C - toString()", "D - unshift()"], "D - unshift()"),
+    new question("What does CSS stand for?", ["A - Creative Style Sheets", "B - Compact Style Sheets",
+        "C - Cascading Style Sheets", "D - Creative Simple Sheets"], "C - Cascading Style Sheets"),
+    new question("What is the one of the most popular Javascript librarys?", ["A - JQuery", "B - JavaComm", "C - Java", "D - JSDB"], "A - JQuery"),
+    new question("What does HTML stand for?", ["A - Home Tool Markup Language", "B -Hyper Text Markup Language",
+        "C - Hyperlinks Text Markup Language", "D - Hyperlinks and Text Markup Language"], "C - Hyperlinks Text Markup Language"),
+    new question("Which is the correct CSS syntax?", ["A -body {color: black;}", "B -{body:color=black;}", "C -body:color=black;", "D -{body;color:black;}"],
         "A -body {color: black;}")
 ];
 
@@ -91,7 +91,7 @@ quiz.prototype.getquestionIndex = function () {
 }
 
 quiz.prototype.end = function () {
-    return this.questions.lenght === this.questionIndex
+    return this.questions.length === this.questionIndex
 }
 
 quiz.prototype.guess = function (answer) {

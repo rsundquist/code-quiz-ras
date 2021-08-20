@@ -1,5 +1,5 @@
 # code-qiz-ras
 
-### Marvel Quiz
+### Javascript Quiz
 
-### Test your Marvel Knowledge
+### Test your Javascript Knowledge
