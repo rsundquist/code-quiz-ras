@@ -33,7 +33,8 @@ var totalSeconds = 0;
 var secondsElapsed = 0;
 var status = "Working";
 var interval;
-
+var userArray = JSON.parse(localStorage.getItem('Initials')) || [];
+var scoreArray = JSON.parse(localStorage.getItem('score')) || [];
 
 
 //Function Timer
@@ -51,7 +52,7 @@ function startTimer(duration, display) {
             element.innerHTML = "<h1> Game over</h1>" + "<h1 id='score'>Your Final Score is : " + counter + " </h1>" +
 
                 "<input type= text name= EnterYourInitials id=username  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button </form> "
-            clicbutton.innerHTML =
+            clicbutton.style.visibility = "hidden"
                 progress2.innerHTML = "";
             startTimer(currentime, display);
 
@@ -98,7 +99,7 @@ quiz.prototype.guess = function (answer) {
         this.score++;
         decision.innerHTML = "Correct";
         counter++;
-        localStorage.setItem("score", counter);
+        //localStorage.setItem("score", counter);
     }
     else {
         decision.innerHTML = "inCorrect";
@@ -158,7 +159,22 @@ function score() {
 
 }
 function displayLeaderBoard() {
-    localStorage.setItem("score", JSON.stringify(Initials, score));
+    var boardEl = document.getElementById ("leaderBoard");
+    boardEl.innerHTML = ""
+    for (i in userArray) {
+        var userEl = document.createElement ("div");
+        var scoreEl = document.createElement ("div");
+        userEl.innerText = userArray[i];
+        scoreEl.innerText = scoreArray[i];
+        boardEl.appendChild(userEl);
+        boardEl.appendChild(scoreEl);
+    }
+    
+    //userLeaderBoard.innerText = JSON.parse(localStorage.getItem('Initials'));
+    //scoreLeaderBoard.innerText = JSON.parse(localStorage.getItem('score'));
+    
+    //localStorage.setItem("score", JSON.stringify(Initials, 'score'));
+
 }
 // function question progress
 function progress() {
@@ -183,10 +199,14 @@ function progress() {
         alert("error Initials cannot be blank");
         }
     else {
-        localStorage.setItem("Initials", UserInitials.value);
-        localStorage.setItem("score", counter);
+        userArray.push(Initials);
+        console.log(userArray)
+        scoreArray.push(counter);
+        console.log(scoreArray);
+        localStorage.setItem("Initials", JSON.stringify(userArray));
+        localStorage.setItem("score", JSON.stringify(scoreArray));
         //displayMessage("success", "Registered successfully");
-    displayLeaderBoard ()
+        displayLeaderBoard ()
        
 
         }
