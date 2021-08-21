@@ -27,7 +27,6 @@ var element = document.querySelector("#quiz");
 var progress2 = document.querySelector("#progress");
 var currentime = 59;
 var counter = 0;
-var UserInitials = document.querySelector("#userinitials");
 var submit = document.querySelector("#sign-up");
 
 var totalSeconds = 0;
@@ -158,6 +157,9 @@ function score() {
     element.innerHTML = finalscore;
 
 }
+function displayLeaderBoard() {
+    localStorage.setItem("score", JSON.stringify(Initials, score));
+}
 // function question progress
 function progress() {
     var current = quizz.questionIndex + 1;
@@ -166,31 +168,31 @@ function progress() {
     if (current >= quizz.questions.length) {
         element.innerHTML = "<h1> Game over</h1>" + "<h1 id='score'>Your Final Score is : " + counter + " </h1>" +
 
-            "<input type= text name= EnterYourInitials id=username  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button>  "
+            "<input type= text name= EnterYourInitials id=UserInitials  placeholder=Enter_Your_Initials_here />  <button class= bt id=sign-up >Sumbit</button>  "
         clicbutton.innerHTML =
         progress2.innerHTML = "";
+        submit=document.getElementById("sign-up");
+        // event listener for button submit
+        submit.addEventListener("click", function () {
+        localStorage.setItem("score", counter);
+        var UserInitials = document.querySelector("#UserInitials");
+        var Initials = UserInitials.value;
+    
 
+    if (Initials === "") {
+        alert("error Initials cannot be blank");
+        }
+    else {
+        localStorage.setItem("Initials", UserInitials.value);
+        localStorage.setItem("score", counter);
+        //displayMessage("success", "Registered successfully");
+    displayLeaderBoard ()
+       
 
+        }
+        });
 
     }
 }
 
  
-// event listener for button submit
-submit.addEventListener("click", function () {
-    localStorage.setItem("score", counter);
-
-    var Initials = UserInitials.value;
-    
-
-    if (Initials === "") {
-        alert("error Initials cannot be blank");
-    }
-    else {
-        localStorage.setItem("Initials", Name);
-        localStorage.setItem("score", counter);
-        displayMessage("success", "Registered successfully");
-       
-
-    }
-});
